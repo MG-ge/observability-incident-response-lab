@@ -2,13 +2,13 @@
 
 Project 3 in the career lab.
 
-This will be a junior-friendly portfolio lab for cloud support, application support, SaaS technical support, product support, and junior operations-adjacent roles.
+This is a junior-friendly portfolio lab for cloud support, application support, SaaS technical support, product support, and junior operations-adjacent roles.
 
-The project will focus on practical troubleshooting:
+The project focuses on practical troubleshooting:
 
 - structured logs
 - request IDs
-- basic metrics or uptime checks
+- simple uptime checks
 - incident scenarios
 - runbooks
 - postmortem writeups
@@ -50,7 +50,7 @@ Projects 1 and 2 already covered:
 - CI tests
 - deployment-readiness documentation
 
-Project 3 should answer a different question:
+Project 3 answers a different question:
 
 ```text
 Can I investigate an application problem using logs, simple signals, runbooks, and incident notes?
@@ -69,7 +69,7 @@ Can I investigate an application problem using logs, simple signals, runbooks, a
 
 ## Tech Stack
 
-Keep the stack simple:
+The stack is intentionally simple:
 
 - Python
 - FastAPI
@@ -119,6 +119,18 @@ request_id=uptime-check-local
 next_action=No action needed.
 ```
 
+## Run Tests
+
+```bash
+pytest
+```
+
+Expected result:
+
+```text
+7 passed
+```
+
 ## v1 Scope
 
 Project 3 v1 includes:
@@ -126,7 +138,7 @@ Project 3 v1 includes:
 - a small local API
 - structured logs
 - request ID behavior
-- one simple metrics or uptime-check workflow
+- one simple uptime-check workflow
 - support-style incident scenarios
 - a runbook
 - short postmortems
