@@ -1,5 +1,27 @@
 # Observability + Incident Response Lab
 
+**What this proves.** Request-ID propagation through `X-Request-ID`, structured JSON request logs, a local uptime-check workflow, three documented incident scenarios, a triage runbook, and two short lab postmortems.
+
+**30-second tour.**
+
+```bash
+git clone https://github.com/MG-ge/observability-incident-response-lab && cd observability-incident-response-lab
+python3 -m venv .venv && source .venv/bin/activate
+pip install -r requirements.txt && pytest
+PORT=8030 scripts/run-dev.sh
+# in another terminal:
+curl -s -H "X-Request-ID: demo-123" http://127.0.0.1:8030/work
+# request_id propagates into the structured log line on the server side.
+curl -s -i -H "X-Request-ID: incident-1" http://127.0.0.1:8030/fail
+# 500 — used to drive the lab incident scenarios in support-cases/.
+scripts/check-uptime.sh
+# uptime_check=pass http_status=200 ...
+```
+
+**Status:** v1 complete · `pytest` 7/7 green · local-only lab, no paid monitoring tools.
+
+---
+
 Project 3 in the career lab.
 
 This is a junior-friendly portfolio lab for cloud support, application support, SaaS technical support, product support, and junior operations-adjacent roles.
